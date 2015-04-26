@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8/>
+    <title>Devowelizer</title>
+    <style>
+      * {
+        font-family: Avenir Next, Helvetica Neue, Arial;
+        margin: 0;
+        padding: 0;
+      }
+      input {
+        width: 100%;
+        text-align: center;
+        font-size: 5em;
+      }
+      #text {
+        text-align: center;
+        font-size: 3.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="devowelize"/>
+    <div id="text"></div>
+    <script>
+    function removeVowels(str) {
+      return str.replace(/[aeiou]/gi, '');
+    }
+
+    var inputtext = document.getElementById('devowelize'),
+    text = document.getElementById('text'),
+    input = document.querySelector('input');
+
+    input.addEventListener('input', function()
+    {
+      text.innerHTML = removeVowels(inputtext.value);
+    });
+
+    </script>
+  </body>
+</html>
