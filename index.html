@@ -10,28 +10,34 @@
         padding: 0;
         overflow: hidden;
       }
-      html, body, input {
+      html, body, textarea {
         width: 100%;
         height: 100%;
       }
-      input {
+      textarea {
         vertical-align: middle;
         text-align: center;
-        font-size: 5em;
+        font-size: 4em;
         padding-bottom: 1em;
         outline: none;
+        border: 0;
+      }
+      @media screen and (max-width: 800px) {
+        textarea {
+          font-size: 2em;
+        }
       }
     </style>
   </head>
   <body>
-    <input type="text" id="devowelize" placeholder="Type text to devowelize" autofocus/>
+    <textarea type="text" id="devowelize" placeholder="Type text to devowelize" autofocus></textarea>
     <script>
     function removeVowels(str) {
       return str.replace(/[aeiou]/gi, '');
     }
 
     var inputtext = document.getElementById('devowelize'),
-    input = document.querySelector('input');
+    input = document.querySelector('textarea');
 
     input.addEventListener('input', function()
     {
