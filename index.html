@@ -8,33 +8,34 @@
         font-family: Avenir Next, Helvetica Neue, Arial;
         margin: 0;
         padding: 0;
+        overflow: hidden;
+      }
+      html, body, input {
+        width: 100%;
+        height: 100%;
       }
       input {
-        width: 100%;
+        vertical-align: middle;
         text-align: center;
         font-size: 5em;
-      }
-      #text {
-        text-align: center;
-        font-size: 3.5em;
+        padding-bottom: 1em;
+        outline: none;
       }
     </style>
   </head>
   <body>
-    <input type="text" id="devowelize"/>
-    <div id="text"></div>
+    <input type="text" id="devowelize" placeholder="Type text to devowelize"/>
     <script>
     function removeVowels(str) {
       return str.replace(/[aeiou]/gi, '');
     }
 
     var inputtext = document.getElementById('devowelize'),
-    text = document.getElementById('text'),
     input = document.querySelector('input');
 
     input.addEventListener('input', function()
     {
-      text.innerHTML = removeVowels(inputtext.value);
+      inputtext.value = removeVowels(inputtext.value);
     });
 
     </script>
